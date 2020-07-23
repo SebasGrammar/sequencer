@@ -1,3 +1,7 @@
+import {sendHeartBeat} from "./tests.js"
+
+// func was not working... it said undefined. why? do exports run before verything else o waht?
+
 var HighResolutionTimer = window.HighResolutionTimer = window.HighResolutionTimer || (function () {
 
     var HighResolutionTimer = function (options) {
@@ -11,11 +15,13 @@ var HighResolutionTimer = window.HighResolutionTimer = window.HighResolutionTime
         this.duration = (options.duration) ? options.duration : 1000;
         this.callback = (options.callback) ? options.callback : function () { };
 
-        this.run = function () {
+        this.run = function(func = sendHeartBeat) {
             this.current_time = Date.now();
             if (!this.start_time) { this.start_time = this.current_time; }
 
             this.callback(this);
+            
+            console.log(func)
 
             var nextTick = this.duration - (this.current_time - (this.start_time + (this.total_ticks * this.duration)));
             this.total_ticks++;
@@ -54,7 +60,7 @@ var _timer = new HighResolutionTimer({
     }
 });
 
-console.log(_timer.callback(_timer)) // this shouldn't event be necssary.
+//console.log(_timer.callback(_timer)) // this shouldn't event be necssary. // oh no, my bad
 
 export { _timer }
 //   _timer.run()

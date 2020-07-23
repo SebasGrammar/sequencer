@@ -163,6 +163,8 @@ function sendHeartBeat() {
 
 // pollFunc(sendHeartBeat, 60000, time);
 
-_timer.run()
+export {sendHeartBeat}
+
+_timer.run("fasf")
 
 console.log(bars)
