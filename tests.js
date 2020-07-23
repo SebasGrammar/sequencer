@@ -1,3 +1,5 @@
+import {_timer} from "./timer.js"
+
 let bars = document.querySelectorAll(".bar")
 
 let one = document.querySelector(".steps")
@@ -147,18 +149,20 @@ function sendHeartBeat() {
     }
 }
 
-function pollFunc(fn, timeout, interval) {
-    var startTime = (new Date()).getTime();
-    interval = interval || 1000;
+// function pollFunc(fn, timeout, interval) {
+//     var startTime = (new Date()).getTime();
+//     interval = interval || 1000;
 
-    (function p() {
-        fn();
-        if (((new Date).getTime() - startTime) <= timeout) {
-            setTimeout(p, interval);
-        }
-    })();
-}
+//     (function p() {
+//         fn();
+//         if (((new Date).getTime() - startTime) <= timeout) {
+//             setTimeout(p, interval);
+//         }
+//     })();
+// }
 
-pollFunc(sendHeartBeat, 60000, time);
+// pollFunc(sendHeartBeat, 60000, time);
+
+_timer.run()
 
 console.log(bars)
