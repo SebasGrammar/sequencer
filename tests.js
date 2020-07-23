@@ -8,8 +8,12 @@ let steps2 = document.querySelector(".steps2")
 
 let ste = steps2.querySelectorAll(".step")
 
+let steps3 = document.querySelector(".steps3")
+let s = steps3.querySelectorAll(".step")
+
 let kick = document.querySelector(".kick")
 let hihat = document.querySelector(".hihat")
+let snare = document.querySelector(".snare")
 
 for (let bar of bars) {
     let steps = bar.children;
@@ -91,7 +95,7 @@ document.addEventListener("keypress", function (event) {
 //     console.log("Buuuuu")
 // }, time)
 
-let time = 1000
+let time = 3500
 
 let play = true;
 
@@ -104,11 +108,15 @@ let b = setInterval(function() {
                 console.log("PLAY")
                 kick.play()
             }
-
+            //hihat.play()
             if (ste[index].classList.contains("active")) {
                 hihat.play()
             }
             //kick.play()
+
+            if (s[index].classList.contains("active")) {
+                snare.play()
+            }
         console.log(index)
         }, index * (time / 16), "lol") // gotta implement different bpms
     }
