@@ -1,8 +1,15 @@
 let bars = document.querySelectorAll(".bar")
 
-let steps = document.querySelectorAll(".step")
+let one = document.querySelector(".steps")
+let steps = one.querySelectorAll(".step")
 
-let kick = document.querySelector("audio")
+let steps2 = document.querySelector(".steps2")
+
+
+let ste = steps2.querySelectorAll(".step")
+
+let kick = document.querySelector(".kick")
+let hihat = document.querySelector(".hihat")
 
 for (let bar of bars) {
     let steps = bar.children;
@@ -84,15 +91,22 @@ document.addEventListener("keypress", function (event) {
 //     console.log("Buuuuu")
 // }, time)
 
-let time = 3000
+let time = 1000
 
-setInterval(function() {
+let play = true;
+
+let b = setInterval(function() {
+    if (!play) {clearInterval(b)}
     for (let index = 0; index < bars.length * 4; index++) {
         setTimeout(function (y) {
             if (steps[index].classList.contains("active")) {
                 console.log(index)
                 console.log("PLAY")
                 kick.play()
+            }
+
+            if (ste[index].classList.contains("active")) {
+                hihat.play()
             }
             //kick.play()
         console.log(index)

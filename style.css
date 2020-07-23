@@ -6,14 +6,16 @@
 
 .step-sequencer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     
     background: orange;
     min-width: 200px;
     min-height: 400px;
 }
 
-.steps {
+.steps, .steps2 {
     display: flex;
     justify-content: space-between;
 
