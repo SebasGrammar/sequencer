@@ -21,11 +21,11 @@ for (let bar of bars) {
     let steps = bar.children;
     for (let step of steps) {
         step.addEventListener("click", function () {
-            //step.style.background = "green"
             step.classList.toggle("active")
         })
     }
 }
+
 let counter = 100
 
 let run = true;
@@ -36,66 +36,6 @@ document.addEventListener("keypress", function (event) {
         run = false
     }
 })
-
-// for (let index = 0; index < bars.length; index++) {
-//     setTimeout(function (y) {
-//         console.log("XD")
-//         console.log(y)
-//         kick.play()
-//     }, index * 1000, "lol")
-// }
-
-/*****/
-
-// for (let index = 0; index < bars.length * 4; index++) {
-//     setTimeout(function (y) {
-//         console.log("XD")
-//         console.log(y)
-//         //kick.play()
-//     }, index * 500, "lol") // gotta implement different bpms
-// }
-
-
-
-
-// for (let index = 0; index < bars.length * 4; index++) {
-//     setTimeout(function (y) {
-//         if (steps[index].classList.contains("active")) {
-//             kick.play()
-//         }
-//         //kick.play()
-//     }, index * 500, "lol") // gotta implement different bpms
-// }
-
-
-// setInterval(function() {
-//     for (let index = 0; index < bars.length * 4; index++) {
-//         setTimeout(function (y) {
-//             if (steps[index].classList.contains("active")) {
-//                 console.log(index)
-//                 kick.play()
-//             }
-//             //kick.play()
-//         }, index * 500, "lol") // gotta implement different bpms
-//     }
-//     console.log("Buuuuu")
-// }, 10000)
-
-// let time = 1000
-
-// setInterval(function() {
-//     for (let index = 0; index < bars.length * 4; index++) {
-//         setTimeout(function (y) {
-//             if (steps[index].classList.contains("active")) {
-//                 console.log(index)
-//                 kick.play()
-//             }
-//             //kick.play()
-//         console.log(index)
-//         }, index * (time / 16), "lol") // gotta implement different bpms
-//     }
-//     console.log("Buuuuu")
-// }, time)
 
 // let time = 3500
 
@@ -125,7 +65,7 @@ document.addEventListener("keypress", function (event) {
 //     console.log("Buuuuu")
 // }, time)
 
-let time = 2000
+let time = 1500
 
 function sendHeartBeat() {
     for (let index = 0; index < bars.length * 4; index++) {
@@ -133,15 +73,21 @@ function sendHeartBeat() {
             if (steps[index].classList.contains("active")) {
                 console.log(index)
                 console.log("PLAY")
+                kick.pause()
+                kick.currentTime = 0;
                 kick.play()
             }
             //hihat.play()
             if (ste[index].classList.contains("active")) {
+                hihat.pause()
+                hihat.currentTime = 0;
                 hihat.play()
             }
             //kick.play()
 
             if (s[index].classList.contains("active")) {
+                snare.pause()
+                snare.currentTime = 0;
                 snare.play()
             }
             console.log(index)
@@ -149,22 +95,22 @@ function sendHeartBeat() {
     }
 }
 
-// function pollFunc(fn, timeout, interval) {
-//     var startTime = (new Date()).getTime();
-//     interval = interval || 1000;
+function pollFunc(fn, timeout, interval) {
+    var startTime = (new Date()).getTime();
+    interval = interval || 1000;
 
-//     (function p() {
-//         fn();
-//         if (((new Date).getTime() - startTime) <= timeout) {
-//             setTimeout(p, interval);
-//         }
-//     })();
-// }
+    (function p() {
+        fn();
+        if (((new Date).getTime() - startTime) <= timeout) {
+            setTimeout(p, interval);
+        }
+    })();
+}
 
-// pollFunc(sendHeartBeat, 60000, time);
+pollFunc(sendHeartBeat, 60000, time);
 
 export {sendHeartBeat}
 
-_timer.run("fasf")
+// _timer.run(sendHeartBeat)
 
 console.log(bars)

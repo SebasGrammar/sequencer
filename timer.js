@@ -21,7 +21,8 @@ var HighResolutionTimer = window.HighResolutionTimer = window.HighResolutionTime
 
             this.callback(this);
             
-            console.log(func)
+            console.log(func);
+            func();
 
             var nextTick = this.duration - (this.current_time - (this.start_time + (this.total_ticks * this.duration)));
             this.total_ticks++;
