@@ -95,12 +95,37 @@ document.addEventListener("keypress", function (event) {
 //     console.log("Buuuuu")
 // }, time)
 
-let time = 3500
+// let time = 3500
 
-let play = true;
+// let play = true;
 
-let b = setInterval(function() {
-    if (!play) {clearInterval(b)}
+// let b = setInterval(function() {
+//     if (!play) {clearInterval(b)}
+//     for (let index = 0; index < bars.length * 4; index++) {
+//         setTimeout(function (y) {
+//             if (steps[index].classList.contains("active")) {
+//                 console.log(index)
+//                 console.log("PLAY")
+//                 kick.play()
+//             }
+//             //hihat.play()
+//             if (ste[index].classList.contains("active")) {
+//                 hihat.play()
+//             }
+//             //kick.play()
+
+//             if (s[index].classList.contains("active")) {
+//                 snare.play()
+//             }
+//         console.log(index)
+//         }, index * (time / 16), "lol") // gotta implement different bpms
+//     }
+//     console.log("Buuuuu")
+// }, time)
+
+let time = 2000
+
+function sendHeartBeat() {
     for (let index = 0; index < bars.length * 4; index++) {
         setTimeout(function (y) {
             if (steps[index].classList.contains("active")) {
@@ -117,10 +142,23 @@ let b = setInterval(function() {
             if (s[index].classList.contains("active")) {
                 snare.play()
             }
-        console.log(index)
-        }, index * (time / 16), "lol") // gotta implement different bpms
+            console.log(index)
+        }, index * (time / 16), "lol")
     }
-    console.log("Buuuuu")
-}, time)
+}
+
+function pollFunc(fn, timeout, interval) {
+    var startTime = (new Date()).getTime();
+    interval = interval || 1000;
+
+    (function p() {
+        fn();
+        if (((new Date).getTime() - startTime) <= timeout) {
+            setTimeout(p, interval);
+        }
+    })();
+}
+
+pollFunc(sendHeartBeat, 60000, time);
 
 console.log(bars)
