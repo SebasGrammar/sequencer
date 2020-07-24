@@ -3,7 +3,7 @@ let counter = 4;
 
 export function createInstrument() {
     let instrument = document.createElement("div")
-    instrument.classList.add("instrument", `steps${counter}`)
+    instrument.classList.add("instrument", `steps${counter}`, "row")
 
     instrument.innerHTML = `
     <div class="bar gray">

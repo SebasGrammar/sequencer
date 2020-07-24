@@ -4,23 +4,105 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
 .step-sequencer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
-    background: orange;
-    min-width: 200px;
+
+    /* min-width: 200px; */
+    width: 1000px;
     min-height: 400px;
+    
+
+    background: #606B6F;
 }
 
-.instrument {
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px 5fr 50px;
+
+    width: 100%;
+    padding: 20px;
+}
+
+.settings {
+    background: #4E585E;
+    height: 50px;
+}
+
+.placeholder {
+
+}
+
+/**/
+
+.controls {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
 
+.enable, .knob {
+    border-radius: 50px;
+}
+
+.enable {
+    width: 20px;
+    height: 20px;
+    background: #CEFF77;
+}
+
+.knob {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #50585F;
+}
+
+.mixer-channel {
+    width: 50px;
+    height: 100%;
+    background: #6C767C;
+}
+
+.sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    color: #FFF;
+    background: #566165;
+
+}
+
+.selected {
+    text-align: center;
     background: ;
-    width: 80%;
+
+}
+
+.light {
+    display: inline-block;
+
+    background: green;
+    width: 20px;
+    height: 100%;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    background: blue;
     height: 40px;
 }
 
@@ -35,27 +117,36 @@
 
 .bar {
     display: flex;
-    justify-content: space-between;
     flex: 1;
-
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .step {
-    width: 20%;
-    height: 100%;
+    width: 25px;
+    height: 90%;
     margin: ;
+
+    border-radius: 5px;
 }
 
 /* .step:active {
     background: blue;
 } */
 
-.gray > * {
-    background: gray;
+.gray>* {
+    background: #535E62;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.red > * {
-    background: red;
+.red>* {
+    background: #7B6361;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .active {

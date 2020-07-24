@@ -2,15 +2,17 @@ import {createInstrument} from "./instrument.js";
 
 let bars = document.querySelectorAll(".bar")
 
-let one = document.querySelector(".steps")
+console.log(bars)
+
+let one = document.querySelector(".instrument")
 let steps = one.querySelectorAll(".step")
 
-let steps2 = document.querySelector(".steps2")
+let steps2 = document.querySelector(".instrument2")
 
 
 let ste = steps2.querySelectorAll(".step")
 
-let steps3 = document.querySelector(".steps3")
+let steps3 = document.querySelector(".instrument3")
 let s = steps3.querySelectorAll(".step")
 
 let kick = document.querySelector(".kick")
@@ -82,7 +84,7 @@ function pollFunc(fn, timeout, interval) {
     })();
 }
 
-//pollFunc(sendHeartBeat, 60000, time);
+pollFunc(sendHeartBeat, 60000, time);
 
 export {sendHeartBeat}
 
