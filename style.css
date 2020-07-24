@@ -15,7 +15,7 @@
     min-height: 400px;
 }
 
-.steps, .steps2, .steps3 {
+.instrument {
     display: flex;
     justify-content: space-between;
 
@@ -23,6 +23,15 @@
     width: 80%;
     height: 40px;
 }
+
+/* .steps, .steps2, .steps3 {
+    display: flex;
+    justify-content: space-between;
+
+    background: ;
+    width: 80%;
+    height: 40px;
+} */
 
 .bar {
     display: flex;

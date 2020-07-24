@@ -1,4 +1,4 @@
-import {_timer} from "./timer.js"
+import {createInstrument} from "./instrument.js";
 
 let bars = document.querySelectorAll(".bar")
 
@@ -32,61 +32,36 @@ let run = true;
 
 document.addEventListener("keypress", function (event) {
     event.preventDefault()
-    if (event.keyCode === 32) {
+    console.log("OEOEOE")
+    console.log(event.keyCode)
+    if (event.keyCode == 32) {
         run = false
+        console.log(run)
     }
 })
 
-// let time = 3500
+let time = 2200
 
-// let play = true;
-
-// let b = setInterval(function() {
-//     if (!play) {clearInterval(b)}
-//     for (let index = 0; index < bars.length * 4; index++) {
-//         setTimeout(function (y) {
-//             if (steps[index].classList.contains("active")) {
-//                 console.log(index)
-//                 console.log("PLAY")
-//                 kick.play()
-//             }
-//             //hihat.play()
-//             if (ste[index].classList.contains("active")) {
-//                 hihat.play()
-//             }
-//             //kick.play()
-
-//             if (s[index].classList.contains("active")) {
-//                 snare.play()
-//             }
-//         console.log(index)
-//         }, index * (time / 16), "lol") // gotta implement different bpms
-//     }
-//     console.log("Buuuuu")
-// }, time)
-
-let time = 1500
 
 function sendHeartBeat() {
-    for (let index = 0; index < bars.length * 4; index++) {
+    for (let index = 0; index < bars.length * 4; index++) { // steps in 4 bars => 16, so 4 * 4
         setTimeout(function (y) {
             if (steps[index].classList.contains("active")) {
                 console.log(index)
                 console.log("PLAY")
-                kick.pause()
+                //kick.pause()
                 kick.currentTime = 0;
                 kick.play()
             }
-            //hihat.play()
+
             if (ste[index].classList.contains("active")) {
-                hihat.pause()
+                //hihat.pause()
                 hihat.currentTime = 0;
                 hihat.play()
             }
-            //kick.play()
 
             if (s[index].classList.contains("active")) {
-                snare.pause()
+                //snare.pause()
                 snare.currentTime = 0;
                 snare.play()
             }
@@ -107,10 +82,13 @@ function pollFunc(fn, timeout, interval) {
     })();
 }
 
-pollFunc(sendHeartBeat, 60000, time);
+//pollFunc(sendHeartBeat, 60000, time);
 
 export {sendHeartBeat}
 
 // _timer.run(sendHeartBeat)
 
 console.log(bars)
+
+
+createInstrument()
