@@ -84,7 +84,7 @@ function pollFunc(fn, timeout, interval) {
     })();
 }
 
-pollFunc(sendHeartBeat, 60000, time);
+//pollFunc(sendHeartBeat, 60000, time);
 
 export {sendHeartBeat}
 

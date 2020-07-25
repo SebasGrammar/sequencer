@@ -24,6 +24,7 @@ body {
     
 
     background: #606B6F;
+    border-radius: 4px;
 }
 
 .row {
@@ -100,10 +101,18 @@ body {
 }
 
 .steps {
-    display: flex;
-    justify-content: space-between;
-    background: blue;
+    /* display: flex;
+    justify-content: space-between; */
+
+    display: grid;
+    /* justify-content: space-between; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+
     height: 40px;
+
+    background: ;
+    
 }
 
 /* .steps, .steps2, .steps3 {
@@ -116,16 +125,22 @@ body {
 } */
 
 .bar {
-    display: flex;
+    /* display: flex;
     flex: 1;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    
     
 }
 
 .step {
-    width: 25px;
-    height: 90%;
+    /* width: 25px; */
+    width: 20px;
+    height: 80%;
     margin: ;
 
     border-radius: 5px;
