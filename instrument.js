@@ -3,35 +3,73 @@ let counter = 4;
 
 export function createInstrument() {
     let instrument = document.createElement("div")
-    instrument.classList.add("instrument", `steps${counter}`, "row")
+    instrument.classList.add(`instrument${counter}`, "row")
 
     instrument.innerHTML = `
-    <div class="bar gray">
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+    <!-- default -->
+
+    <div class="controls">
+        <div class="enable">
+
+        </div>
+
+        <div class="panning knob">
+
+        </div>
+
+        <div class="volume knob">
+
+        </div>
+
+        <div class="mixer-channel">
+
+        </div>
     </div>
 
-    <div class="bar red">
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+
+    <div class="sample">
+        Kick
     </div>
 
-    <div class="bar gray">
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+    <div class="selected">
+        <div class="light">
+
+        </div>
     </div>
 
-    <div class="bar red">
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
-        <div class="step"></div>
+    <div class="steps">
+        <div class="bar gray">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+
+        <div class="bar red">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+
+        <div class="bar gray">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+
+        <div class="bar red">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+        </div>
+    </div>
+
+
+    <div class="empty">
+
     </div>
     `
 

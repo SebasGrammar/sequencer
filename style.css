@@ -23,25 +23,41 @@ body {
     min-height: 400px;
     
 
-    background: #606B6F;
+    background: #727C81;
+    border: 8px solid #4E585E;
     border-radius: 4px;
 }
 
 .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 50px 5fr 50px;
+    /* align-items: center; */
+    /* grid-template-columns: 1fr 1fr 50px 5fr 50px; */
+    grid-template-columns: 1fr 1fr 50px 5fr;
+    grid-gap: 5px;
 
     width: 100%;
     padding: 20px;
 }
 
 .settings {
+
     background: #4E585E;
-    height: 50px;
+
 }
 
 .placeholder {
+    width: 100%;
+}
 
+.arrows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.all {
+    width: 100%;
+    height: 100%;
+    background: #32393E;
 }
 
 /**/
@@ -57,14 +73,14 @@ body {
 }
 
 .enable {
-    width: 20px;
-    height: 20px;
+    width: 0.8rem;
+    height: 0.8rem;
     background: #CEFF77;
 }
 
 .knob {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
     background: #50585F;
 }
 
@@ -95,9 +111,11 @@ body {
 .light {
     display: inline-block;
 
-    background: green;
-    width: 20px;
+    width: 16px;
     height: 100%;
+
+    background: #5E686D;
+    border: 2px solid #3A444A;
 }
 
 .steps {

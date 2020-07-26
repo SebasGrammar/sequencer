@@ -34,41 +34,32 @@ let run = true;
 
 document.addEventListener("keypress", function (event) {
     event.preventDefault()
-    console.log("OEOEOE")
-    console.log(event.keyCode)
     if (event.keyCode == 32) {
         run = false
-        console.log(run)
     }
 })
 
 let time = 2200
 
-
-function sendHeartBeat() {
+function play() {
     for (let index = 0; index < bars.length * 4; index++) { // steps in 4 bars => 16, so 4 * 4
-        setTimeout(function (y) {
+        setTimeout(function () {
             if (steps[index].classList.contains("active")) {
-                console.log(index)
-                console.log("PLAY")
-                //kick.pause()
                 kick.currentTime = 0;
                 kick.play()
             }
 
             if (ste[index].classList.contains("active")) {
-                //hihat.pause()
                 hihat.currentTime = 0;
                 hihat.play()
             }
 
             if (s[index].classList.contains("active")) {
-                //snare.pause()
                 snare.currentTime = 0;
                 snare.play()
             }
             console.log(index)
-        }, index * (time / 16), "lol")
+        }, index * (time / 16))
     }
 }
 
@@ -84,13 +75,8 @@ function pollFunc(fn, timeout, interval) {
     })();
 }
 
-//pollFunc(sendHeartBeat, 60000, time);
-
-export {sendHeartBeat}
-
-// _timer.run(sendHeartBeat)
+export {play}
 
 console.log(bars)
-
 
 createInstrument()
