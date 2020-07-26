@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +12,8 @@ body {
     align-items: center;
 
     height: 100vh;
+
+    font-family: 'Lato', sans-serif;
 }
 
 .step-sequencer {
@@ -19,10 +23,9 @@ body {
     align-items: center;
 
     /* min-width: 200px; */
-    width: 1000px;
-    min-height: 400px;
+    width: 850px;
+    min-height: 350px;
     
-
     background: #727C81;
     border: 8px solid #4E585E;
     border-radius: 4px;
@@ -32,11 +35,11 @@ body {
     display: grid;
     /* align-items: center; */
     /* grid-template-columns: 1fr 1fr 50px 5fr 50px; */
-    grid-template-columns: 1fr 1fr 50px 5fr;
+    grid-template-columns: 1fr 1fr 30px 5fr;
     grid-gap: 5px;
 
     width: 100%;
-    padding: 20px;
+    padding: 0 50px;
 }
 
 .settings {
@@ -119,7 +122,7 @@ body {
 .light {
     display: inline-block;
 
-    width: 16px;
+    width: 12px;
     height: 100%;
 
     background: #5E686D;

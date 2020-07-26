@@ -84,7 +84,7 @@ export function createInstrument() {
         }
     }
 
-    stepSequencer.appendChild(instrument)
+    // stepSequencer.appendChild(instrument)
     counter ++
     
 }

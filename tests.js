@@ -22,7 +22,7 @@ let snare = document.querySelector(".snare")
 for (let bar of bars) {
     let steps = bar.children;
     for (let step of steps) {
-        step.addEventListener("click", function () {
+        step.addEventListener("mousedown", function () {
             step.classList.toggle("active")
         })
     }

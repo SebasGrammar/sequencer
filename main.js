@@ -12,4 +12,4 @@ function main() {
     steps.appendChild(step.create())
 }
 
-// main()
+main()
