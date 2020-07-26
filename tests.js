@@ -77,6 +77,8 @@ function pollFunc(fn, timeout, interval) {
 
 export {play}
 
+pollFunc(play, 60000, time)
+
 console.log(bars)
 
 createInstrument()
