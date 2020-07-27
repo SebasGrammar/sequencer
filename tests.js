@@ -1,4 +1,9 @@
 import {createInstrument} from "./instrument.js";
+import {createGrid} from "./body.js";
+
+console.log(window.innerWidth)
+
+createGrid(1400)
 
 let bars = document.querySelectorAll(".bar")
 
