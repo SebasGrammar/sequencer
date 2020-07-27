@@ -6,28 +6,21 @@
 }
 
 body {
-
     position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
-    background: #2C363F;
+    background: #2C3D47;
     font-family: 'Lato', sans-serif;
-
     overflow-x: hidden;
 }
 
 .grid {
     position: absolute;
-
     width: 1px;
     height: 100%;
-    
     background: #000;
-
     z-index: -1;
 }
 
@@ -79,14 +72,11 @@ body {
 .all {
     display: flex;
     align-items: center;
-
     width: 100%;
     height: 100%;
     padding: 5px;
-
     background: #32393E;
     border-radius: 3px;
-
     color: #FFF;
 }
 
@@ -141,9 +131,9 @@ body {
     color: #FFF;
     background: rgb(97, 107, 113);
     background: linear-gradient(0deg, rgba(97, 107, 113, 1) 0%, rgba(129, 139, 145, 1) 100%);
-    -webkit-box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
-    -moz-box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
-    box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
+    -webkit-box-shadow: 0px 6px 6px -3px rgba(97, 107, 113, 1);
+    -moz-box-shadow: 0px 6px 6px -3px rgba(97, 107, 113, 1);
+    box-shadow: 0px 6px 6px -3px rgba(97, 107, 113, 1);
     border: 2px solid #535D62;
     border-radius: 3px;
 }
@@ -200,6 +190,8 @@ body {
     width: 20px;
     height: 80%;
     margin: ;
+
+    border: 1px solid #4C5359;
     border-radius: 5px;
 }
 
@@ -233,14 +225,16 @@ body {
 } */
 
 .gray>* {
-    background: #535E62;
+    background: rgb(79, 84, 88);
+    background: linear-gradient(0deg, rgba(79, 84, 88, 1) 0%, rgba(108, 113, 117, 1) 100%);
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .red>* {
-    background: #7B6361;
+    background: rgb(99,83,84);
+    background: linear-gradient(0deg, rgba(99,83,84,1) 0%, rgba(126,110,111,1) 100%);
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);

@@ -3,7 +3,7 @@ import {createGrid} from "./body.js";
 
 console.log(window.innerWidth)
 
-createGrid(1400)
+//createGrid(1400)
 
 let bars = document.querySelectorAll(".bar")
 
@@ -20,9 +20,15 @@ let ste = steps2.querySelectorAll(".step")
 let steps3 = document.querySelector(".instrument3")
 let s = steps3.querySelectorAll(".step")
 
+let steps4 = document.querySelector(".instrument4")
+let t = steps4.querySelectorAll(".step")
+
 let kick = document.querySelector(".kick")
 let hihat = document.querySelector(".hihat")
 let snare = document.querySelector(".snare")
+let tambourine = document.querySelector(".tambourine")
+
+tambourine.volume = 0.3
 
 for (let bar of bars) {
     let steps = bar.children;
@@ -63,12 +69,17 @@ function play() {
                 snare.currentTime = 0;
                 snare.play()
             }
+
+            if (t[index].classList.contains("active")) {
+                tambourine.currentTime = 0;
+                tambourine.play()
+            }
             console.log(index)
-        }, index * (time / 16))
+        }, index * (time / 16)) // starts over after last step
     }
 }
 
-function pollFunc(fn, timeout, interval) {
+function start(fn, timeout, interval) {
     var startTime = (new Date()).getTime();
     interval = interval || 1000;
 
@@ -82,7 +93,7 @@ function pollFunc(fn, timeout, interval) {
 
 export {play}
 
-pollFunc(play, 60000, time)
+// start(play, 600000, time)
 
 console.log(bars)
 

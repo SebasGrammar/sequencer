@@ -61,7 +61,4 @@ var _timer = new HighResolutionTimer({
     }
 });
 
-//console.log(_timer.callback(_timer)) // this shouldn't event be necssary. // oh no, my bad
-
 export { _timer }
-//   _timer.run()
