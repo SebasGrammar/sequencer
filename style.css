@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +9,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100vh;
 
+    background: #2C363F;
     font-family: 'Lato', sans-serif;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+
+    background: red;
 }
 
 .step-sequencer {
@@ -21,11 +27,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     /* min-width: 200px; */
     width: 850px;
     min-height: 350px;
-    
     background: #727C81;
     border: 8px solid #4E585E;
     border-radius: 4px;
@@ -35,17 +39,14 @@ body {
     display: grid;
     /* align-items: center; */
     /* grid-template-columns: 1fr 1fr 50px 5fr 50px; */
-    grid-template-columns: 1fr 1fr 30px 5fr;
-    grid-gap: 5px;
-
+    grid-template-columns: 1fr 1.5fr 20px 5fr;
+    grid-gap: 0 15px;
     width: 100%;
     padding: 0 50px;
 }
 
 .settings {
-
     background: #4E585E;
-
 }
 
 .placeholder {
@@ -59,9 +60,17 @@ body {
 }
 
 .all {
+    display: flex;
+    align-items: center;
+
     width: 100%;
     height: 100%;
+    padding: 5px;
+
     background: #32393E;
+    border-radius: 3px;
+
+    color: #FFF;
 }
 
 /**/
@@ -79,21 +88,30 @@ body {
 .enable {
     width: 0.8rem;
     height: 0.8rem;
-    background: #CEFF77;
+    background: rgb(206, 255, 119);
+    background: linear-gradient(0deg, rgba(206, 255, 119, 1) 0%, rgba(168, 247, 61, 1) 100%);
+    border: 2px solid #9FA7A9;
 }
 
 .knob {
+    display: flex;
+    justify-content: center;
     width: 1.3rem;
     height: 1.3rem;
     background: #50585F;
+    -webkit-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.92);
+    -moz-box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.92);
+    box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.92);
+}
 
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+.line {
+    width: 2px;
+    height: 50%;
+    background: #FFF;
 }
 
 .mixer-channel {
-    width: 50px;
+    width: 30px;
     height: 100%;
     background: #6C767C;
 }
@@ -102,29 +120,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100%;
-
     color: #FFF;
-    background: #566165;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-
+    background: rgb(97, 107, 113);
+    background: linear-gradient(0deg, rgba(97, 107, 113, 1) 0%, rgba(129, 139, 145, 1) 100%);
+    -webkit-box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
+    -moz-box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
+    box-shadow: 0px 6px 6px -3px rgba(97,107,113,1);
+    border: 2px solid #535D62;
+    border-radius: 3px;
 }
 
 .selected {
     text-align: center;
     background: ;
-
 }
 
 .light {
     display: inline-block;
-
     width: 12px;
     height: 100%;
-
     background: #5E686D;
     border: 2px solid #3A444A;
 }
@@ -132,17 +147,12 @@ body {
 .steps {
     /* display: flex;
     justify-content: space-between; */
-
     display: grid;
-    
     /* justify-content: space-between; */
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
-
     height: 40px;
-
     background: ;
-    
 }
 
 /* .steps, .steps2, .steps3 {
@@ -159,33 +169,46 @@ body {
     flex: 1;
     justify-content: space-between;
     align-items: center; */
-
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
-    
-    
 }
 
 .step {
     /* width: 25px; */
-
+    position: relative;
     display: grid;
     justify-items: center;
-    align-items: center;
-
     width: 20px;
     height: 80%;
     margin: ;
-
     border-radius: 5px;
 }
 
 .slot {
+    position: absolute;
+    top: 8px;
     width: 80%;
-    height: 1px;
-    background: #000;
+    height: 2px;
+    background: #2A3139;
+}
+
+.slot:before, .slot:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 5px;
+    height: 3px;
+    background: #2A3139;
+}
+
+.slot:before {
+    right: 0;
+}
+
+.slot:after {
+    left: 0;
 }
 
 /* .step:active {
@@ -207,5 +230,6 @@ body {
 }
 
 .active {
-    background: green;
+    /* background: green; */
+    filter: brightness(200%);
 }
